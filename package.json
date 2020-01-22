@@ -1,0 +1,73 @@
+{
+  "name": "react-redux-rxjs-boilerplate",
+  "version": "1.0.0",
+  "description": "React Redux RxJS Boilerplate",
+  "main": "src/index.tsx",
+  "scripts": {
+    "start": "webpack-dev-server --env.ENVIRONMENT=development --mode development",
+    "build": "webpack --env.ENVIRONMENT=production --mode production",
+    "test": "jest"
+  },
+  "engines": {
+    "node": "10.x"
+  },
+  "keywords": [],
+  "author": "Jakub Pusiak @lebrande",
+  "license": "ISC",
+  "dependencies": {
+    "connected-react-router": "^6.6.1",
+    "history": "^4.10.1",
+    "react": "^16.12.0",
+    "react-dom": "^16.12.0",
+    "react-redux": "^7.1.3",
+    "react-router-dom": "^5.1.2",
+    "recompose": "^0.30.0",
+    "redux": "^4.0.5",
+    "redux-observable": "^1.2.0",
+    "reselect": "^4.0.0",
+    "rxjs": "^6.5.4",
+    "yup": "^0.28.0"
+  },
+  "devDependencies": {
+    "@types/history": "^4.7.4",
+    "@types/jest": "^24.9.0",
+    "@types/react": "^16.9.18",
+    "@types/react-dom": "^16.9.5",
+    "@types/react-redux": "^7.1.6",
+    "@types/react-test-renderer": "^16.9.1",
+    "@types/recompose": "^0.30.7",
+    "@types/redux-mock-store": "^1.0.1",
+    "@types/webpack": "^4.41.3",
+    "dotenv": "^8.2.0",
+    "jest": "^25.1.0",
+    "react-test-renderer": "^16.12.0",
+    "redux-mock-store": "^1.5.4",
+    "ts-loader": "^6.2.1",
+    "typescript": "^3.7.5",
+    "webpack": "^4.41.5",
+    "webpack-cli": "^3.3.10",
+    "webpack-dev-server": "^3.10.1"
+  },
+  "jest": {
+    "globals": {
+      "ts-jest": {
+        "tsConfig": "tsconfig.spec.json"
+      }
+    },
+    "setupFiles": [
+      "./jest-config.js"
+    ],
+    "transform": {
+      "^.+\\.tsx?$": "ts-jest"
+    },
+    "moduleFileExtensions": [
+      "ts",
+      "tsx",
+      "js",
+      "json"
+    ],
+    "moduleNameMapper": {
+      "\\.(jpg|jpeg|png|svg)$": "<rootDir>/__mocks__/fileMock.ts"
+    }
+  }
+}
