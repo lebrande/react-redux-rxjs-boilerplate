@@ -4,8 +4,8 @@ import App from './components/App/App';
 import { Provider } from 'react-redux';
 import { ConnectedRouter } from 'connected-react-router';
 
-import { configureStore } from './store';
-import { history } from './store';
+import { configureStore } from '@tools/store';
+import { history } from '@tools/store';
 
 const store = configureStore();
 

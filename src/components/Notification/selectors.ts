@@ -1,7 +1,7 @@
 import { createSelector } from 'reselect';
 
-import { RootState } from '../../rootReducer';
-import { TNotificationState, TNotification } from './types';
+import { RootState } from '@tools/rootReducer';
+import { TNotificationState, TNotification } from '@components/Notification/types';
 
 const notificationStateSelector = (state: RootState): TNotificationState => state.notification;
 

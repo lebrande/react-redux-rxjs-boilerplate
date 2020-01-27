@@ -4,7 +4,7 @@ import { ofType, Epic } from 'redux-observable';
 import { LOCATION_CHANGE, LocationChangeAction } from 'connected-react-router';
 import { map } from 'rxjs/operators';
 
-import { setNotification } from '../../notification/actions';
+import { setNotification } from '@components/Notification/actions';
 
 export const exampleEpic: Epic = (
   actions$: Observable<AnyAction>,

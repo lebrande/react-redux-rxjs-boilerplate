@@ -4,7 +4,7 @@ import {
   SET_NOTIFICATION,
   TCloseNotificationAction,
   CLOSE_NOTIFICATION,
- } from './types';
+ } from '@components/Notification/types';
 
 export const setNotification = (notification: TNotification): TSetNotificationAction => ({
   type: SET_NOTIFICATION,

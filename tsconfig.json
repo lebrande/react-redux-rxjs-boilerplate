@@ -14,7 +14,12 @@
     "allowSyntheticDefaultImports": true,
     "removeComments": true,
     "sourceMap": true,
-    "target": "es6"
+    "target": "es6",
+    "baseUrl": ".",
+    "paths": {
+      "@components/*": ["src/components/*"],
+      "@tools/*": ["src/tools/*"],
+    }
   },
   "include": [
     "./src/**/*"

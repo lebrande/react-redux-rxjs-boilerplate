@@ -1,6 +1,6 @@
 import React, { FunctionComponent } from 'react';
 
-import Notification from '../Notification/Notification';
+import Notification from '@components/Notification/Notification';
 
 type TProps = {};
 

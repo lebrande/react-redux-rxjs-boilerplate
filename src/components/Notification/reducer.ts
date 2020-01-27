@@ -3,7 +3,7 @@ import {
   TNotificationActionTypes,
   SET_NOTIFICATION,
   CLOSE_NOTIFICATION,
-} from './types';
+} from '@components/Notification/types';
 
 const initialState: TNotificationState = {
   notification: null,
