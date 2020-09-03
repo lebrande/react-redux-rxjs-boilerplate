@@ -1,18 +1,27 @@
-import React, { FunctionComponent } from 'react';
+import React, { FunctionComponent, useEffect } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+import { todosSelector } from '@/modules/todos/selectors';
+import { fetchTodosAsync } from '@/modules/todos/actions';
 
-import Notification from '@components/Notification/Notification';
+const App: FunctionComponent = () => {
+  const todos = useSelector(todosSelector);
+  const dispatch = useDispatch();
 
-type TProps = {};
+  useEffect(() => {
+    dispatch(fetchTodosAsync.request());
+  });
 
-const App: FunctionComponent<TProps> = () => {
   return (
-    <>
-      <p>
-        API_URL: {API_URL}
-      </p>
-      <Notification />
-      <div>Hello Wolrld!</div>
-    </>
+    <div>
+      <h1>Todos</h1>
+      <ul>
+        {todos.map(({ name, done }) => {
+          return (
+            <li key={name}>{name} {done ? '✅' : '❌'}</li>
+          );
+        })}
+      </ul>
+    </div>
   );
 };
 

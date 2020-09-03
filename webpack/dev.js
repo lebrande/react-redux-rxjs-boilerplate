@@ -1,6 +1,6 @@
 const createCommonConfig = require('./common');
 
-const { indexPath } = require('./helpers');
+const { indexPath } = require('./utils');
 
 module.exports = (env) => ({
   ...createCommonConfig(env),

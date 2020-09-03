@@ -1,21 +1,19 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from './components/App/App';
-import { Provider } from 'react-redux';
-import { ConnectedRouter } from 'connected-react-router';
+import { ThemeProvider } from 'styled-components';
 
-import { configureStore } from '@tools/store';
-import { history } from '@tools/store';
-
-const store = configureStore();
+import App from '@/components/App/App';
+import ReduxProvider from '@/store/ReduxProvider';
+import { GlobalStyle } from '@/styled/global';
+import { appRootElementId } from '@/constants';
+import { jsdzemTheme } from '@/themes/jsdzem';
 
 ReactDOM.render(
-  <Provider store={store}> 
-    <ConnectedRouter history={history}>
+  <ReduxProvider>
+    <ThemeProvider theme={jsdzemTheme}>
+      <GlobalStyle />
       <App />
-    </ConnectedRouter>
-  </Provider>,
-  document.getElementById('app'),
+    </ThemeProvider>
+  </ReduxProvider>,
+  document.getElementById(appRootElementId),
 );
-
-

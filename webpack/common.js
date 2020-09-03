@@ -1,6 +1,9 @@
-const webpack = require('webpack');
-
-const { indexPath } = require('./helpers');
+const {
+  indexPath,
+  alias,
+  typescriptRule,
+  createDefinePlugin,
+} = require('./utils');
 
 module.exports = (env) => ({
   entry: './src/index.tsx',
@@ -11,15 +14,29 @@ module.exports = (env) => ({
   devtool: 'source-map',
   resolve: {
     extensions: ['.ts', '.tsx', '.js', '.json'],
+    alias,
   },
   module: {
     rules: [
-      { test: /\.tsx?$/, loader: 'awesome-typescript-loader' },
+      typescriptRule,
+      {
+        test: /\.(png|woff|woff2|eot|ttf)$/,
+        use: [
+          {
+            loader: 'url-loader',
+            options: {
+              limit: 8192,
+            },
+          },
+        ],
+      },
+      {
+        test: /\.svg$/,
+        use: ['@svgr/webpack', 'url-loader'],
+      }
     ],
   },
   plugins: [
-    new webpack.DefinePlugin({
-      API_URL: JSON.stringify(env.API_URL),
-    }),
+    createDefinePlugin(env),
   ],
 });

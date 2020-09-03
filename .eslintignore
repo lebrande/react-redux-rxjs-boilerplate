@@ -1,0 +1,7 @@
+**/*.spec.ts
+**/*.spec.tsx
+webpack/**/*
+webpack.config.js
+babel.config.js
+jest.config.js
+.eslintrc.js

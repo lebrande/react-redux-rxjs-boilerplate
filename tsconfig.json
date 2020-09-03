@@ -1,27 +1,15 @@
 {
+  "extends": "./node_modules/react-redux-typescript-scripts/tsconfig.json",
   "compilerOptions": {
-    "types": ["react", "jest"],
-    "noImplicitAny": true,
-    "outDir": "./dist/",
-    "allowJs": true,
     "jsx": "react",
-    "module": "esnext",
-    "moduleResolution": "node",
-    "noImplicitReturns": true,
-    "noImplicitThis": true,
-    "noUnusedLocals": true,
-    "noUnusedParameters": true,
-    "allowSyntheticDefaultImports": true,
-    "removeComments": true,
-    "sourceMap": true,
-    "target": "es6",
     "baseUrl": ".",
     "paths": {
-      "@components/*": ["src/components/*"],
-      "@tools/*": ["src/tools/*"],
-    }
+      "@/*": ["src/*"],
+      "@sb/*": [".storybook/*"]
+    },
   },
   "include": [
-    "./src/**/*"
+    "src/**/*",
+    ".storybook/**/*"
   ]
 }

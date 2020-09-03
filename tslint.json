@@ -1,0 +1,12 @@
+{
+  "extends": [
+    "react-redux-typescript-scripts/tslint.json", 
+    "react-redux-typescript-scripts/tslint-react.json"
+  ],
+  "rules": {
+    "no-submodule-imports": [true, "@", "rxjs"],
+    "no-shadowed-variable": false,
+    "no-empty": false,
+    "jsx-boolean-value": false
+  }
+}
