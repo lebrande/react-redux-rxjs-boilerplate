@@ -6,5 +6,3 @@ import 'jest-styled-components';
 export const testScheduler = new TestScheduler((result, expected) => {
   expect(result).toEqual(expected);
 });
-
-jest.mock('react-autosuggest', () => 'ReactAutosuggest');
